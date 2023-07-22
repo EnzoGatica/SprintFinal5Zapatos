@@ -8,7 +8,7 @@ import com.example.sprintfinal5zapatos.databinding.ItemLayoutBinding
 
 class Adapter : RecyclerView.Adapter <Adapter.ViewHolder>() {
 
-    var zapatos = mutableListOf<Zapatos>()
+    var zapatos = mutableListOf<Zapato>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
@@ -25,15 +25,15 @@ class Adapter : RecyclerView.Adapter <Adapter.ViewHolder>() {
         holder.bind(item)
     }
 
-    fun setData(zapatosList: List<Zapatos>){
-        this.zapatos = zapatosList.toMutableList()
+    fun setData(zapatoList: List<Zapato>){
+        this.zapatos = zapatoList.toMutableList()
     }
 
     class ViewHolder(val binding: ItemLayoutBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(zapatos: Zapatos){
-            binding.txtNombre.text = zapatos.nombre
-            binding.txtPrecio.text = zapatos.precio.toString()
-            binding.imgZapatos.load(zapatos.imgUrl)
+        fun bind(zapato: Zapato){
+            binding.txtNombre.text = zapato.nombre
+            binding.txtPrecio.text = zapato.precio.toString()
+            binding.imgZapatos.load(zapato.imgUrl)
 
         }
     }

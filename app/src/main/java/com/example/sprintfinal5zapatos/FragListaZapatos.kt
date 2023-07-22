@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import com.example.sprintfinal5zapatos.databinding.FragmentListaZapatosBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,6 +19,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class FragListaZapatos : Fragment() {
+
+    lateinit var binding: FragmentListaZapatosBinding
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -33,19 +37,20 @@ class FragListaZapatos : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_zapatos, container, false)
+        binding = FragmentListaZapatosBinding.inflate(LayoutInflater.from(activity))
+        initAdapter()
+        return (binding.root)
+    }
+
+    private fun initAdapter() {
+        val adapter = Adapter()
+        val listaZapatos = ZapatosList.getZapatos()
+        adapter.setData(listaZapatos)
+        binding.RecyclerViewZapatos.adapter = adapter
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragListaZapatos.
-         */
+
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
