@@ -16,6 +16,7 @@
         android:id="@+id/CardCanastaZapatos"
         android:layout_width="206dp"
         android:layout_height="171dp"
+        app:cardBackgroundColor="#FF8989"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

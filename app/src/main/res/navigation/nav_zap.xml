@@ -9,5 +9,14 @@
         android:id="@+id/fragListaZapatos"
         android:name="com.example.sprintfinal5zapatos.FragListaZapatos"
         android:label="fragment_lista_zapatos"
-        tools:layout="@layout/fragment_lista_zapatos" />
+        tools:layout="@layout/fragment_lista_zapatos" >
+        <action
+            android:id="@+id/action_fragListaZapatos_to_fragVistaZapatos"
+            app:destination="@id/fragVistaZapatos" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragVistaZapatos"
+        android:name="com.example.sprintfinal5zapatos.FragVistaZapatos"
+        android:label="fragment_vista_zapatos"
+        tools:layout="@layout/fragment_vista_zapatos" />
 </navigation>

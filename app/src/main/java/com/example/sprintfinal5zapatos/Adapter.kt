@@ -2,6 +2,7 @@ package com.example.sprintfinal5zapatos
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.sprintfinal5zapatos.databinding.ItemLayoutBinding
@@ -34,6 +35,9 @@ class Adapter : RecyclerView.Adapter <Adapter.ViewHolder>() {
             binding.txtNombre.text = zapato.nombre
             binding.txtPrecio.text = zapato.precio.toString()
             binding.imgZapatos.load(zapato.imgUrl)
+            binding.CardCanastaZapatos.setOnClickListener{
+                Navigation.findNavController(binding.root).navigate(R.id.action_fragListaZapatos_to_fragVistaZapatos)
+            }
 
         }
     }
