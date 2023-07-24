@@ -12,8 +12,8 @@ class ZapatosList {
             shoeList.add(Zapato("Zapato 6", "https://i.pinimg.com/236x/49/70/3a/49703ab66f7ef2ed878d0692ae415e14.jpg", 89.99))
             shoeList.add(Zapato("Zapato 7", "https://i.pinimg.com/236x/93/ea/84/93ea845bdfd13f4fbe0f05639eeaf599.jpg", 199.99))
             shoeList.add(Zapato("Zapato 8", "https://i.pinimg.com/236x/b6/16/80/b61680386560fb8644a75761d7c442f6.jpg", 169.99))
-            shoeList.add(Zapato("Zapato 9", "https://i.pinimg.com/236x/c2/dd/9e/c2dd9e43c894a64646b03aa8da4a7244.jpg", 169.99))
-            shoeList.add(Zapato("Zapato 10", "https://i.pinimg.com/564x/08/2e/b3/082eb36aa62897a68a575e543c662080.jpg", 169.99))
+            shoeList.add(Zapato("Zapato 9", "https://i.pinimg.com/236x/c2/dd/9e/c2dd9e43c894a64646b03aa8da4a7244.jpg", 83.99))
+            shoeList.add(Zapato("Zapato 10", "https://i.pinimg.com/564x/08/2e/b3/082eb36aa62897a68a575e543c662080.jpg", 19.99))
             return shoeList
         }
     }
