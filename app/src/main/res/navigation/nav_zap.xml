@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_fragListaZapatos_to_fragVistaZapatos"
             app:destination="@id/fragVistaZapatos" />
+        <action
+            android:id="@+id/action_fragListaZapatos_to_fragCarritoCompras"
+            app:destination="@id/fragCarritoCompras" />
     </fragment>
     <fragment
         android:id="@+id/fragVistaZapatos"
         android:name="com.example.sprintfinal5zapatos.FragVistaZapatos"
         android:label="fragment_vista_zapatos"
         tools:layout="@layout/fragment_vista_zapatos" />
+    <fragment
+        android:id="@+id/fragCarritoCompras"
+        android:name="com.example.sprintfinal5zapatos.FragCarritoCompras"
+        android:label="fragment_carrito_compras"
+        tools:layout="@layout/fragment_carrito_compras" />
 </navigation>

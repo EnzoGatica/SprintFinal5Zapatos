@@ -1,5 +1,7 @@
 package com.example.sprintfinal5zapatos
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -21,7 +23,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class FragVistaZapatos : Fragment() {
 
-    lateinit var binding: FragmentVistaZapatosBinding
+    private lateinit var binding: FragmentVistaZapatosBinding
+    private lateinit var mSharedPreferences: SharedPreferences
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -40,8 +43,13 @@ class FragVistaZapatos : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        mSharedPreferences = requireActivity().applicationContext.getSharedPreferences("llave", Context.MODE_PRIVATE)
         binding = FragmentVistaZapatosBinding.inflate(LayoutInflater.from(activity))
         initAdapter()
+        binding.btnAgregar.setOnClickListener {
+            mSharedPreferences.edit().putString(param1,param1).apply()
+        }
+
         return (binding.root)
     }
 
@@ -49,6 +57,9 @@ class FragVistaZapatos : Fragment() {
         binding.txtNombreVista.text = "$param1"
         binding.imageView.load(param2)
         binding.txtPrecioVista.text = "$ $param3"
+        binding.btnAgregar.setOnClickListener {
+
+        }
     }
 
     companion object {

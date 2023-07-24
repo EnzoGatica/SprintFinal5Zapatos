@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.sprintfinal5zapatos.databinding.FragmentListaZapatosBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,7 +23,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class FragListaZapatos : Fragment(), Adapter.ZapatosCallBack {
 
-    lateinit var binding: FragmentListaZapatosBinding
+    private lateinit var binding: FragmentListaZapatosBinding
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -50,6 +51,9 @@ class FragListaZapatos : Fragment(), Adapter.ZapatosCallBack {
         adapter.setData(listaZapatos)
         adapter.callback = this
         binding.RecyclerViewZapatos.adapter = adapter
+        binding.btnLista.setOnClickListener {
+            findNavController().navigate(R.id.action_fragListaZapatos_to_fragCarritoCompras)
+        }
     }
 
     companion object {
