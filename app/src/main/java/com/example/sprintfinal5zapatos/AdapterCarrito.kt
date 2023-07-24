@@ -26,6 +26,8 @@ class AdapterCarrito: RecyclerView.Adapter <AdapterCarrito.ViewHolder>() {
         holder.bind(item)
     }
 
+
+
     fun setData(zapatosList: MutableList<Zapato>){
         this.zapatosCarro = zapatosList.toMutableList()
     }
@@ -36,7 +38,7 @@ class AdapterCarrito: RecyclerView.Adapter <AdapterCarrito.ViewHolder>() {
             binding.txtNombreCarrito.text = zapato.nombre
             binding.txtPrecioCarrito.text = "$ " + zapato.precio.toString()
             binding.imgCarrito.load(zapato.imgUrl)
-            binding.btnEliminar.setOnClickListener {
+            binding.imgDelete.setOnClickListener {
                 //meter eliminar
             }
         }

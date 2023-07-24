@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import coil.load
 import com.example.sprintfinal5zapatos.databinding.FragmentVistaZapatosBinding
 
@@ -48,6 +49,7 @@ class FragVistaZapatos : Fragment() {
         initAdapter()
         binding.btnAgregar.setOnClickListener {
             mSharedPreferences.edit().putString(param1,param1).apply()
+            Toast.makeText(context, "Agrego al Carro", Toast.LENGTH_SHORT).show()
         }
 
         return (binding.root)
@@ -57,9 +59,6 @@ class FragVistaZapatos : Fragment() {
         binding.txtNombreVista.text = "$param1"
         binding.imageView.load(param2)
         binding.txtPrecioVista.text = "$ $param3"
-        binding.btnAgregar.setOnClickListener {
-
-        }
     }
 
     companion object {

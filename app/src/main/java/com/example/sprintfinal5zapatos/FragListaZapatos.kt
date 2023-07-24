@@ -51,7 +51,7 @@ class FragListaZapatos : Fragment(), Adapter.ZapatosCallBack {
         adapter.setData(listaZapatos)
         adapter.callback = this
         binding.RecyclerViewZapatos.adapter = adapter
-        binding.btnLista.setOnClickListener {
+        binding.btnFloatCarrito.setOnClickListener {
             findNavController().navigate(R.id.action_fragListaZapatos_to_fragCarritoCompras)
         }
     }
