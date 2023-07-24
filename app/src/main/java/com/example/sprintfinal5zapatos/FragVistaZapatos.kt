@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import coil.load
 import com.example.sprintfinal5zapatos.databinding.FragmentVistaZapatosBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,12 +24,14 @@ class FragVistaZapatos : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var param3: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            param1 = it.getString("nombre")
+            param2 = it.getString("url")
+            param3 = it.getString("precio")
         }
     }
 
@@ -42,10 +45,9 @@ class FragVistaZapatos : Fragment() {
     }
 
     private fun initAdapter() {
-        val adapter = Adapter()
-        val listaZapatos = ZapatosList.getZapatos()
-        adapter.setData(listaZapatos)
-        //binding.RecyclerViewZapatos.adapter = adapter
+        binding.txtPrecioVista.text = "$param1"
+        binding.imageView.load(param2)
+        binding.txtPrecioVista.text = "$ $param3"
     }
 
     companion object {

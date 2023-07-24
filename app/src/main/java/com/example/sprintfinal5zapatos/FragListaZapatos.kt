@@ -18,7 +18,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [FragListaZapatos.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragListaZapatos : Fragment() {
+class FragListaZapatos : Fragment(), Adapter.ZapatosCallBack {
 
     lateinit var binding: FragmentListaZapatosBinding
     // TODO: Rename and change types of parameters
@@ -46,6 +46,7 @@ class FragListaZapatos : Fragment() {
         val adapter = Adapter()
         val listaZapatos = ZapatosList.getZapatos()
         adapter.setData(listaZapatos)
+        adapter.callback = this
         binding.RecyclerViewZapatos.adapter = adapter
     }
 
@@ -60,5 +61,13 @@ class FragListaZapatos : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun showInforFragment(zapato: Zapato) {
+        val bundle = Bundle()
+        bundle.putString("nombre", zapato.nombre)
+        bundle.putString("url", zapato.imgUrl)
+        bundle.putString("precio", zapato.precio.toString())
+
     }
 }
