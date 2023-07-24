@@ -6,7 +6,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.sprintfinal5zapatos.databinding.ItemLayoutBinding
-import kotlinx.coroutines.flow.callbackFlow
 
 class Adapter : RecyclerView.Adapter <Adapter.ViewHolder>() {
 
@@ -33,7 +32,7 @@ class Adapter : RecyclerView.Adapter <Adapter.ViewHolder>() {
         this.zapatos = zapatoList.toMutableList()
     }
 
-    class ViewHolder(val binding: ItemLayoutBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemLayoutBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(zapato: Zapato){
             binding.txtNombre.text = zapato.nombre
@@ -42,7 +41,6 @@ class Adapter : RecyclerView.Adapter <Adapter.ViewHolder>() {
             binding.CardCanastaZapatos.setOnClickListener{
                 callback?.showInforFragment(zapato)
                 val applicationContext = this
-                Navigation.findNavController(binding.root).navigate(R.id.action_fragListaZapatos_to_fragVistaZapatos)
             }
 
         }

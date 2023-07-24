@@ -1,6 +1,7 @@
 package com.example.sprintfinal5zapatos
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +46,7 @@ class FragVistaZapatos : Fragment() {
     }
 
     private fun initAdapter() {
-        binding.txtPrecioVista.text = "$param1"
+        binding.txtNombreVista.text = "$param1"
         binding.imageView.load(param2)
         binding.txtPrecioVista.text = "$ $param3"
     }

@@ -1,11 +1,13 @@
 package com.example.sprintfinal5zapatos
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.Navigation
 import com.example.sprintfinal5zapatos.databinding.FragmentListaZapatosBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -68,6 +70,7 @@ class FragListaZapatos : Fragment(), Adapter.ZapatosCallBack {
         bundle.putString("nombre", zapato.nombre)
         bundle.putString("url", zapato.imgUrl)
         bundle.putString("precio", zapato.precio.toString())
+        Navigation.findNavController(binding.root).navigate(R.id.action_fragListaZapatos_to_fragVistaZapatos,bundle)
 
     }
 }
