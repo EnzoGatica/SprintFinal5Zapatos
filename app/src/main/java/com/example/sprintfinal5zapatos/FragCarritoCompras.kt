@@ -37,6 +37,7 @@ class FragCarritoCompras : Fragment() {
         binding = FragmentCarritoComprasBinding.inflate(LayoutInflater.from(activity))
         mSharedPreferences = requireActivity().applicationContext.getSharedPreferences("llave",Context.MODE_PRIVATE)
         initAdapterCarrito()
+        
         return (binding.root)
     }
 
@@ -57,6 +58,7 @@ class FragCarritoCompras : Fragment() {
         {
             if (nombre.containsKey(z.nombre))carro.add(z)
         }
+
 
         return carro
     }
